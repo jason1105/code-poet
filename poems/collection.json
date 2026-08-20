@@ -1,0 +1,72 @@
+[
+  {
+    "id": "a3f7c12",
+    "commit_sha": "a3f7c12e884d59b1c2e6f3a041d7b928c5e09f4d",
+    "commit_message": "refactor: extract UserAuthService from monolithic AuthController",
+    "author": "Zhang Wei",
+    "timestamp": "2026-08-19T14:32:07Z",
+    "type": "七言绝句",
+    "title": "拆分",
+    "poem": "庞然巨兽困一身，\n挥刀拆骨见精神。\n服务解耦新气象，\n千行旧码化灰尘。",
+    "insight": "拆分是为了更好地聚合",
+    "files_changed": 7,
+    "insertions": 312,
+    "deletions": 289
+  },
+  {
+    "id": "b8e2d45",
+    "commit_sha": "b8e2d459c3a17f60d4e5b8c1029f3a7d6e84b21c",
+    "commit_message": "fix: resolve null pointer exception in payment processing pipeline",
+    "author": "Li Mei",
+    "timestamp": "2026-08-18T09:15:44Z",
+    "type": "现代诗",
+    "title": "空指针的告白",
+    "poem": "我不存在\n但你总在寻找我\n\n每次相遇\n都是一场崩溃\n\n今天\n你终于学会了\n在见我之前\n先问一句\n——你在吗？",
+    "insight": "防御性编程是对未知的尊重",
+    "files_changed": 3,
+    "insertions": 28,
+    "deletions": 4
+  },
+  {
+    "id": "c1d9f78",
+    "commit_sha": "c1d9f78a2b4e5f30c7d8e9a0b1c2d3e4f5a6b7c8",
+    "commit_message": "feat: add infinite scroll to product listing with React Query",
+    "author": "Wang Fang",
+    "timestamp": "2026-08-17T16:48:22Z",
+    "type": "打油诗",
+    "title": "无限滚动颂",
+    "poem": "用户手指向下滑，\n数据哗哗往下加。\n分页已是上世纪，\n滚到天涯都不怕。",
+    "insight": "懒加载是对用户耐心的珍惜",
+    "files_changed": 4,
+    "insertions": 187,
+    "deletions": 62
+  },
+  {
+    "id": "d5a4b91",
+    "commit_sha": "d5a4b91f3c2e1d0b9a8f7e6d5c4b3a2918273645",
+    "commit_message": "perf: add Redis caching layer for frequently accessed product catalog",
+    "author": "Chen Jian",
+    "timestamp": "2026-08-15T11:03:58Z",
+    "type": "俳句",
+    "title": "缓存之道",
+    "poem": "初访数据库，\n千次叩门无回音——\n Redis 已知晓。",
+    "insight": "记忆比重复计算更有智慧",
+    "files_changed": 5,
+    "insertions": 94,
+    "deletions": 11
+  },
+  {
+    "id": "e9c3a56",
+    "commit_sha": "e9c3a56b7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a",
+    "commit_message": "test: add comprehensive unit tests for order calculation engine",
+    "author": "Liu Yang",
+    "timestamp": "2026-08-13T20:27:31Z",
+    "type": "自由诗",
+    "title": "给测试的情书",
+    "poem": "你曾被我忽视\n像黑暗里无人阅读的日记\n\n而今我终于明白\n每一个断言\n都是对未来自己的承诺\n\n那些绿色的勾\n不是终点\n是凌晨三点\n最温柔的守护者\n\n我写下你\n是因为我怕\n怕遗忘\n怕下一个我\n在同一块石头上\n再次跌倒",
+    "insight": "测试是写给未来同事的情书",
+    "files_changed": 6,
+    "insertions": 423,
+    "deletions": 0
+  }
+]
