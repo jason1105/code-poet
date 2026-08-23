@@ -33,17 +33,17 @@ cd code-poet
 
 Enable GitHub Pages on the repo: **Settings → Pages → Source: Deploy from branch → main → / (root)**.
 
-### Step 2 — Add the ANTHROPIC_API_KEY secret
+### Step 2 — Add the OPENROUTER_API_KEY secret
 
 In **this** `code-poet` repo:
 
 ```
 Settings → Secrets and variables → Actions → New repository secret
-Name:  ANTHROPIC_API_KEY
+Name:  OPENROUTER_API_KEY
 Value: sk-ant-...
 ```
 
-Get a key at [console.anthropic.com](https://console.anthropic.com).
+Get a key at [openrouter.ai/keys](https://openrouter.ai/keys).
 
 ### Step 3 — Trigger the workflow from another repo
 
@@ -116,8 +116,8 @@ https://YOUR_USERNAME.github.io/code-poet/
 
 | Variable in workflow | Default | Purpose |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | *(required secret)* | Authenticate with Anthropic |
-| Model | `claude-haiku-4-5-20251001` | Fastest/cheapest; change to `claude-sonnet-4-5` for richer verse |
+| `OPENROUTER_API_KEY` | *(required secret)* | Authenticate with OpenRouter |
+| `OPENROUTER_MODEL` | *(optional variable)* | Any OpenRouter model ID; defaults to `deepseek/deepseek-chat` |
 | Max poems | `50` | Rolling window kept in `collection.json` |
 | Diff limit | `3000` chars | Keeps prompt tokens reasonable |
 

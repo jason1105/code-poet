@@ -24,11 +24,12 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install anthropic
+        run: pip install openai
 
       - name: Write poem for this commit
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
         run: |
           python3 << 'PYTHON_SCRIPT'
           import subprocess
@@ -37,7 +38,7 @@ jobs:
           import re
           import sys
           from datetime import datetime, timezone
-          import anthropic
+          from openai import OpenAI
 
           # ── 1. Gather git information ─────────────────────────────────────────
           def run(cmd):
@@ -99,15 +100,17 @@ jobs:
           }}"""
 
           # ── 3. Call Anthropic API ─────────────────────────────────────────────
-          client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+          MODEL = os.environ.get("OPENROUTER_MODEL") or "deepseek/deepseek-chat"
+          client = OpenAI(base_url="https://openrouter.ai/api/v1",
+                          api_key=os.environ["OPENROUTER_API_KEY"])
 
-          message = client.messages.create(
-              model="claude-haiku-4-5-20251001",
+          message = client.chat.completions.create(
+              model=MODEL,
               max_tokens=1024,
               messages=[{"role": "user", "content": prompt}],
           )
 
-          raw_response = message.content[0].text.strip()
+          raw_response = message.choices[0].message.content.strip()
 
           # Strip markdown code fences if present
           raw_response = re.sub(r'^```(?:json)?\s*', '', raw_response)
