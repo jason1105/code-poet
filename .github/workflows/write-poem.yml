@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
 
     steps:
       - name: Checkout repository
@@ -73,29 +74,29 @@ jobs:
 
           # ── 2. Build prompt ───────────────────────────────────────────────────
           prompt = f"""你是一位精通编程哲学的诗人。请根据以下代码变更，创作一首诗。
-诗歌形式自由选择（七言绝句/现代诗/俳句/打油诗/自由诗），要体现代码的本质和程序员的情感。
+          诗歌形式自由选择（七言绝句/现代诗/俳句/打油诗/自由诗），要体现代码的本质和程序员的情感。
 
-变更摘要：
-{stat}
+          变更摘要：
+          {stat}
 
-代码diff片段：
-{diff}
+          代码diff片段：
+          {diff}
 
-提交信息：{commit_msg}
+          提交信息：{commit_msg}
 
-请输出：
-1) 诗体类型
-2) 诗歌标题
-3) 正文（保留换行）
-4) 一句关于这次提交的程序员感悟（15字以内）
+          请输出：
+          1) 诗体类型
+          2) 诗歌标题
+          3) 正文（保留换行）
+          4) 一句关于这次提交的程序员感悟（15字以内）
 
-严格按以下JSON格式输出，不要有任何额外文字：
-{{
-  "type": "七言绝句",
-  "title": "标题",
-  "poem": "第一行\\n第二行\\n第三行\\n第四行",
-  "insight": "感悟一句话"
-}}"""
+          严格按以下JSON格式输出，不要有任何额外文字：
+          {{
+          "type": "七言绝句",
+          "title": "标题",
+          "poem": "第一行\\n第二行\\n第三行\\n第四行",
+          "insight": "感悟一句话"
+          }}"""
 
           # ── 3. Call Anthropic API ─────────────────────────────────────────────
           client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
@@ -163,4 +164,16 @@ jobs:
           git add poems/collection.json
           git diff --cached --quiet && echo "No changes to commit" && exit 0
           git commit -m "poem: add verse for commit $(git rev-parse --short HEAD~1) [skip ci]"
-          git push
+          # --- 改造：bot 不再直推 main，改为开 PR 并自动合并 ---
+          git fetch origin main --depth=1 -q
+          if [ -z "$(git log FETCH_HEAD..HEAD --oneline)" ]; then
+            echo "No new commits; nothing to do."
+            exit 0
+          fi
+          BRANCH="bot/$(date -u +%Y%m%d-%H%M%S)"
+          git push -u origin "HEAD:$BRANCH"
+          export GH_TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          gh pr create --base main --head "$BRANCH" \
+            --title "$(git log -1 --pretty=%s)" \
+            --body "Automated update by workflow: ${{ github.workflow }}"
+          gh pr merge "$BRANCH" --squash --delete-branch
