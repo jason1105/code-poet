@@ -3,6 +3,7 @@ name: Code Poet — Write a Poem for Every Commit
 on:
   push:
     branches: [main]
+  workflow_dispatch:  # 允许手动触发，便于测试与补跑
 
 jobs:
   write-poem:
