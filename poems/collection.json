@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "id": "6d2b632",
+    "commit_sha": "6d2b632c30f73bb99710340a6a959197e7e516ad",
+    "commit_message": "ci: 给 write-poem 增加 workflow_dispatch 手动触发入口 (#4)",
+    "author": "lvwei",
+    "timestamp": "2026-08-24T07:16:51.827649+00:00",
+    "type": "七言绝句",
+    "title": "手动触发",
+    "poem": "一行代码入云端\n万般诗情待触发\n手动轻点春风至\n便引灵感满人间",
+    "insight": "手动触发即自由",
+    "files_changed": 1,
+    "insertions": 1,
+    "deletions": 0
+  }
+]
