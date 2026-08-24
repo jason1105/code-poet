@@ -347,50 +347,7 @@
 
 <script>
 // ── Embedded fallback poems (3 samples) ───────────────────────────────────
-const FALLBACK = [
-  {
-    id: "fallback1",
-    commit_sha: "a3f7c12e884d59b1c2e6f3a041d7b928c5e09f4d",
-    commit_message: "refactor: extract UserAuthService from monolithic AuthController",
-    author: "Zhang Wei",
-    timestamp: "2026-08-19T14:32:07Z",
-    type: "七言绝句",
-    title: "拆分",
-    poem: "庞然巨兽困一身，\n挥刀拆骨见精神。\n服务解耦新气象，\n千行旧码化灰尘。",
-    insight: "拆分是为了更好地聚合",
-    files_changed: 7,
-    insertions: 312,
-    deletions: 289
-  },
-  {
-    id: "fallback2",
-    commit_sha: "b8e2d459c3a17f60d4e5b8c1029f3a7d6e84b21c",
-    commit_message: "fix: resolve null pointer exception in payment processing pipeline",
-    author: "Li Mei",
-    timestamp: "2026-08-18T09:15:44Z",
-    type: "现代诗",
-    title: "空指针的告白",
-    poem: "我不存在\n但你总在寻找我\n\n每次相遇\n都是一场崩溃\n\n今天\n你终于学会了\n在见我之前\n先问一句\n——你在吗？",
-    insight: "防御性编程是对未知的尊重",
-    files_changed: 3,
-    insertions: 28,
-    deletions: 4
-  },
-  {
-    id: "fallback3",
-    commit_sha: "e9c3a56b7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a",
-    commit_message: "test: add comprehensive unit tests for order calculation engine",
-    author: "Liu Yang",
-    timestamp: "2026-08-13T20:27:31Z",
-    type: "自由诗",
-    title: "给测试的情书",
-    poem: "你曾被我忽视\n像黑暗里无人阅读的日记\n\n而今我终于明白\n每一个断言\n都是对未来自己的承诺\n\n那些绿色的勾\n不是终点\n是凌晨三点\n最温柔的守护者",
-    insight: "测试是写给未来同事的情书",
-    files_changed: 6,
-    insertions: 423,
-    deletions: 0
-  }
-];
+const FALLBACK = [];
 
 // ── State ─────────────────────────────────────────────────────────────────
 let allPoems = [];
@@ -481,7 +438,7 @@ async function loadPoems() {
     const res = await fetch('poems/collection.json?v=' + Date.now());
     if (!res.ok) throw new Error('fetch failed');
     const data = await res.json();
-    allPoems = Array.isArray(data) && data.length ? data : FALLBACK;
+    allPoems = Array.isArray(data) ? data : [];
   } catch {
     allPoems = FALLBACK;
   }
