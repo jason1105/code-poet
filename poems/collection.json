@@ -1,5 +1,19 @@
 [
   {
+    "id": "0398109",
+    "commit_sha": "03981096cf33337488709727122a57517927a01a",
+    "commit_message": "chore: 添加 .gitignore，移除已误提交的 __pycache__ (#7)",
+    "author": "lvwei",
+    "timestamp": "2026-08-24T08:01:43.623115+00:00",
+    "type": "七言绝句",
+    "title": ".gitignore",
+    "poem": "误入缓存三行清，\n仓库冗余自此宁。\n版本追踪应有界，\n莫教杂物染空明。",
+    "insight": "缓存勿入库，洁净方为道",
+    "files_changed": 1,
+    "insertions": 3,
+    "deletions": 0
+  },
+  {
     "id": "b4e71c7",
     "commit_sha": "b4e71c79c24a4856a6e1df0b9e002a9a87dcfe41",
     "commit_message": "poem: add verse for commit 7c0d0cd [skip ci] (#5)",
