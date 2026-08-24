@@ -1,5 +1,19 @@
 [
   {
+    "id": "b4e71c7",
+    "commit_sha": "b4e71c79c24a4856a6e1df0b9e002a9a87dcfe41",
+    "commit_message": "poem: add verse for commit 7c0d0cd [skip ci] (#5)",
+    "author": "github-actions[bot]",
+    "timestamp": "2026-08-24T07:44:50.045861+00:00",
+    "type": "七言绝句",
+    "title": "集韵添新",
+    "poem": "十六行增一韵藏，\n七c零d零cd入篇章。\n集内诗魂今又续，\n静默提交意更长。",
+    "insight": "诗入代码，静默成章。",
+    "files_changed": 1,
+    "insertions": 16,
+    "deletions": 1
+  },
+  {
     "id": "6d2b632",
     "commit_sha": "6d2b632c30f73bb99710340a6a959197e7e516ad",
     "commit_message": "ci: 给 write-poem 增加 workflow_dispatch 手动触发入口 (#4)",
