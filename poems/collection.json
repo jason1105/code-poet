@@ -1,5 +1,19 @@
 [
   {
+    "id": "f75df73",
+    "commit_sha": "f75df73ebe6407b31a50d99f0a5de24d46b13539",
+    "commit_message": "refactor: 把内嵌 Python 拆成 scripts/write_poem.py (#15)",
+    "author": "lvwei",
+    "timestamp": "2026-08-26T09:36:14.700283+00:00",
+    "type": "七言绝句",
+    "title": "拆诗入文件",
+    "poem": "内嵌逻辑隐云间，拆作新篇脚本前。流水线中存雅意，一诗一缕化青烟。",
+    "insight": "化繁为简见诗心",
+    "files_changed": 2,
+    "insertions": 128,
+    "deletions": 129
+  },
+  {
     "id": "861d686",
     "commit_sha": "861d68683cc33ef1ef8cd710ea18a2a469844de1",
     "commit_message": "feat: provider 三要素改为可配置，默认切 DeepSeek 官方 (#11)",
