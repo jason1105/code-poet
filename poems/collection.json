@@ -1,5 +1,19 @@
 [
   {
+    "id": "861d686",
+    "commit_sha": "861d68683cc33ef1ef8cd710ea18a2a469844de1",
+    "commit_message": "feat: provider 三要素改为可配置，默认切 DeepSeek 官方 (#11)",
+    "author": "lvwei",
+    "timestamp": "2026-08-26T08:45:38.446584+00:00",
+    "type": "七言绝句",
+    "title": "换源",
+    "poem": "三要素成可调参，\n默认已迁DeepSeek。\n一行配置风云变，\n从此灵思不绕弯。",
+    "insight": "源头一改，万法皆通。",
+    "files_changed": 1,
+    "insertions": 7,
+    "deletions": 3
+  },
+  {
     "id": "e2b9659",
     "commit_sha": "e2b965970952d4faccdd6294bb873186103e1bf0",
     "commit_message": "ci: 工作流失败时自动开 issue 告警 (#9)",
