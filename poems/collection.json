@@ -1,5 +1,19 @@
 [
   {
+    "id": "6423625",
+    "commit_sha": "64236252f49feb83cd68f5ff9bab407755b16c8b",
+    "commit_message": "ci: 增加轻量 CI（py_compile + workflow YAML 校验） (#18)",
+    "author": "lvwei",
+    "timestamp": "2026-08-26T11:47:55.925261+00:00",
+    "type": "七言绝句",
+    "title": "轻骑守门",
+    "poem": "四十八行织网新，\n轻骑夜半守城门。\n语法微光查伪句，\n一行未稳不惊尘。",
+    "insight": "小步快跑，守护每一行。",
+    "files_changed": 1,
+    "insertions": 48,
+    "deletions": 0
+  },
+  {
     "id": "f75df73",
     "commit_sha": "f75df73ebe6407b31a50d99f0a5de24d46b13539",
     "commit_message": "refactor: 把内嵌 Python 拆成 scripts/write_poem.py (#15)",
