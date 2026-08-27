@@ -91,6 +91,11 @@ except json.JSONDecodeError as e:
     print(f"Raw response: {raw_response}")
     sys.exit(1)
 
+# 防空响应：诗歌为空则跳过，不污染 collection（按 push 触发，静默跳过）
+if not str(poem_data.get("poem", "")).strip():
+    print("空诗歌内容，跳过写入以避免污染 collection。")
+    sys.exit(0)
+
 # ── 5. Build poem record ──────────────────────────────────────────────
 new_poem = {
     "id": short_sha,
