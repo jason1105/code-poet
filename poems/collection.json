@@ -1,5 +1,19 @@
 [
   {
+    "id": "ba090b8",
+    "commit_sha": "ba090b8f200d9f3056d1b514f3db4305bc1584ec",
+    "commit_message": "docs: README 对齐现状（DeepSeek + LLM_* 环境变量） (#22)",
+    "author": "lvwei",
+    "timestamp": "2026-08-27T13:23:37.361215+00:00",
+    "type": "七言绝句",
+    "title": "README 对齐记",
+    "poem": "文档轻修六处同，\n深寻变量旧痕空。\n读来方觉今时意，\n一点灵犀在简中。",
+    "insight": "文档即初心，对齐见真章。",
+    "files_changed": 1,
+    "insertions": 6,
+    "deletions": 6
+  },
+  {
     "id": "7b1a5ca",
     "commit_sha": "7b1a5ca47ada62d3b536614d39e9bf23ce6322b6",
     "commit_message": "fix: 防止空/无效 LLM 响应写坏数据 (dev-hub#5) (#20)",
