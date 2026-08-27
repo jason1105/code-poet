@@ -1,5 +1,19 @@
 [
   {
+    "id": "7b1a5ca",
+    "commit_sha": "7b1a5ca47ada62d3b536614d39e9bf23ce6322b6",
+    "commit_message": "fix: 防止空/无效 LLM 响应写坏数据 (dev-hub#5) (#20)",
+    "author": "lvwei",
+    "timestamp": "2026-08-27T12:33:47.255472+00:00",
+    "type": "七言绝句",
+    "title": "空诗防线",
+    "poem": "空诗不应入典藏\n静默跳过保纯良\n数据海洋须谨慎\n防线一行护万疆",
+    "insight": "防空洞诗护数据纯真",
+    "files_changed": 1,
+    "insertions": 5,
+    "deletions": 0
+  },
+  {
     "id": "6423625",
     "commit_sha": "64236252f49feb83cd68f5ff9bab407755b16c8b",
     "commit_message": "ci: 增加轻量 CI（py_compile + workflow YAML 校验） (#18)",
